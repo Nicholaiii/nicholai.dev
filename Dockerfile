@@ -8,7 +8,7 @@ ENV NODE_ENV=production
 RUN npm run build
 
 # Production stage
-FROM abiosoft/caddy as production
+FROM abiosoft/caddy:no-stats as production
 COPY --from=build /app/public /srv
 COPY Caddyfile /etc
 ENV ACME_AGREE="true"

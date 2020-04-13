@@ -1,5 +1,5 @@
 <script>
-import SvelteTooltip from 'svelte-tooltip'
+import SvelteTooltip from './SvelteTooltip.svelte'
 import Icon from 'mdi-svelte'
 import {
 	mdiGithub,
@@ -8,7 +8,19 @@ import {
 	mdiDiscord
 } from '@mdi/js'
 
-let color = '#d996f6'
+function copyDiscordLink () {
+  navigator.clipboard.writeText('nicholai#1312')
+  tip = "Copied!"
+}
+
+function resetTip () {
+  setTimeout(()=>tip = ogtip, 200)
+}
+
+const color = '#d996f6'
+const ogtip = `<strong>nicholai#1312</strong> <br />
+<i>click to copy</i>`
+let tip = ogtip
 </script>
 
 
@@ -29,8 +41,8 @@ let color = '#d996f6'
       <Icon path={mdiTwitter} color={color}/>
     </a>
   </span>
-  <span class="wrapper m">
-    <SvelteTooltip tip="nicholai#1312" bottom color="#d996f6">
+  <span class="wrapper m" on:mouseout={resetTip} on:click={copyDiscordLink}>
+    <SvelteTooltip tip={tip} bottom color="#d996f6">
       <Icon path={mdiDiscord} color={color}/>
     </SvelteTooltip>
   </span>
