@@ -11,7 +11,6 @@ FROM abiosoft/caddy:no-stats as production
 COPY --from=build /app/public /srv
 COPY Caddyfile /etc
 ENV ACME_AGREE="true"
-EXPOSE 80
-EXPOSE 443
+EXPOSE 80 443
 
 LABEL authors="Nicholai Nissen"
