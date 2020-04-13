@@ -1,3 +1,4 @@
+language: minimal
 sudo: required
 if: branch = master
 services:
@@ -8,9 +9,20 @@ env:
     - REPO=nicholai.dev
     - REGISTRY_URL="docker.pkg.github.com/${REGISTRY_USER}/${REPO}/${IMAGE_NAME}"
     - LATEST_REG="$REGISTRY_URL:latest"
-    - LATEST_NAME="$IMAGE_NAME:latest"
+
+before_script:
+  - version="$(date +%s)"
+
 script:
+  - docker build -t "$IMAGE_NAME" .
+
+before_deploy:
   - echo "$DOCKER_PASSWORD" | docker login docker.pkg.github.com -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t "$LATEST_NAME" .
-  - docker tag $LATEST_NAME $LATEST_REG
-  - docker push "$LATEST_REG"
+  - docker tag "$IMAGE_NAME" "${REGISTRY_URL}:latest"
+  - docker tag "$IMAGE_NAME" "${REGISTRY_URL}:${version}"
+
+deploy:
+  provider: script
+  script: docker push "${REGISTRY_URL}:latest" && docker push "${REGISTRY_URL}:${version}"
+  on:
+    branch: master
