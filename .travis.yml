@@ -7,6 +7,7 @@ env:
   global: 
     - IMAGE_NAME=frontend
     - REPO=nicholai.dev
+    - REGISTRY_USER=Nicholaiii
     - REGISTRY_URL="docker.pkg.github.com/${REGISTRY_USER}/${REPO}/${IMAGE_NAME}"
     - LATEST_REG="$REGISTRY_URL:latest"
 
