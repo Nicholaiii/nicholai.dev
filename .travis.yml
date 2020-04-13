@@ -12,4 +12,5 @@ env:
 script:
   - echo "$DOCKER_PASSWORD" | docker login docker.pkg.github.com -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t "$LATEST_NAME" .
+  - docker tag $LATEST_NAME $LATEST_REG
   - docker push "$LATEST_REG"
