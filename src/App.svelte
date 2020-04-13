@@ -25,7 +25,7 @@ let tip = ogtip
 
 
 <main>
-	<h1>nicholai nissen</h1>
+	<h1>nicholai nissen.</h1>
   <span class="m">
     <a href="https://github.com/nicholaiii">
       <Icon path={mdiGithub} color={color}/>
