@@ -8,7 +8,7 @@ RUN npm run build
 
 # Production stage
 FROM abiosoft/caddy:no-stats as production
-COPY --from=build /usr/src/app/public /srv
+COPY --from=build /app/public /srv
 COPY Caddyfile /etc
 ENV ACME_AGREE="true"
 EXPOSE 80
