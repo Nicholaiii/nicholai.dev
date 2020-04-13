@@ -1,5 +1,5 @@
 # Build stage
-FROM node:12 as build
+FROM node:13.12-alpine as build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
@@ -13,3 +13,5 @@ COPY Caddyfile /etc
 ENV ACME_AGREE="true"
 EXPOSE 80
 EXPOSE 443
+
+LABEL authors="Nicholai Nissen"

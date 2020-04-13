@@ -1,0 +1,13 @@
+sudo: required
+if: branch = master
+services:
+  - docker
+env:
+  global: 
+    - IMAGE_NAME=frontend
+    - REPO=nicholai.dev
+    - REGISTRY_URL="docker.pkg.github.com/${REGISTRY_USER}/${REPO}/${IMAGE_NAME}"
+script:
+  - echo "$DOCKER_PASSWORD" | docker login docker.pkg.github.com -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t "$REGISTRY_URL:latest" .
+  - docker push "$REGISTRY_URL:latest"
