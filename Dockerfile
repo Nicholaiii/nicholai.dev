@@ -4,10 +4,11 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
+ENV NODE_ENV=production
 RUN npm run build
 
 # Production stage
-FROM abiosoft/caddy:no-stats as production
+FROM abiosoft/caddy as production
 COPY --from=build /app/public /srv
 COPY Caddyfile /etc
 ENV ACME_AGREE="true"
