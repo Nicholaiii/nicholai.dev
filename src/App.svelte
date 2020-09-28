@@ -1,6 +1,6 @@
 <script>
 import SvelteTooltip from './SvelteTooltip.svelte'
-import Icon from 'mdi-svelte'
+import Icon from './Icon.svelte'
 import {
 	mdiGithub,
 	mdiTwitter,
@@ -18,11 +18,10 @@ function resetTip () {
 }
 
 const color = '#d996f6'
+
 const tag = tag => (content = '') => `<${tag}>${content}</${tag}>`
 const strong = tag('strong')
 const i = tag('i')
-const ogtip = `${strong('nicholai#1312')}<br />
-<i>click to copy</i>`
 
 const tip = (title, subtitle) => `${strong(title)}<br />${i(subtitle)}`
 </script>
@@ -32,32 +31,32 @@ const tip = (title, subtitle) => `${strong(title)}<br />${i(subtitle)}`
 	<h1>nicholai nissen.</h1>
 
   <span class="wrapper m">
-    <SvelteTooltip tip="{tip('@nicholaiii', 'github')}" bottom color={color}>
-      <a href="https://github.com/nicholaiii" target="_blank">
-        <Icon path={mdiGithub} color={color}/>
+    <SvelteTooltip tip="{tip('@nicholaiii', 'github')}" bottom {color}>
+      <a href="https://github.com/nicholaiii" target="_blank" rel="noopener">
+        <Icon title="GitHub" path={mdiGithub} {color}/>
       </a>
     </SvelteTooltip>
   </span>
 
   <span class="wrapper m">
-    <SvelteTooltip tip="{tip('@nicholainissen', 'gitlab')}" bottom color={color}>
-      <a href="http://gitlab.com/nicholainissen" target="_blank">
-        <Icon path={mdiGitlab} color={color} />
+    <SvelteTooltip tip="{tip('@nicholainissen', 'gitlab')}" bottom {color}>
+      <a href="http://gitlab.com/nicholainissen" target="_blank" rel="noopener">
+        <Icon title="GitLab" path={mdiGitlab} {color} />
       </a>
     </SvelteTooltip>
   </span>
 
   <span class="wrapper m">
-    <SvelteTooltip tip="{tip('@nicholainissen', 'twitter')}" bottom color={color}>
-      <a href="https://twitter.com/nicholainissen" target="_blank">
-        <Icon path={mdiTwitter} color={color}/>
+    <SvelteTooltip tip="{tip('@nicholainissen', 'twitter')}" bottom {color}>
+      <a href="https://twitter.com/nicholainissen" target="_blank" rel="noopener">
+        <Icon title="Twitter" path={mdiTwitter} {color}/>
       </a>
     </SvelteTooltip>
   </span>
 
   <span class="wrapper m" on:mouseout={resetTip} on:click={copyDiscordLink}>
-    <SvelteTooltip tip={tip('nicholai#1312', 'click to copy')} bottom color={color}>
-      <Icon path={mdiDiscord} color={color}/>
+    <SvelteTooltip tip={tip('nicholai#1312', 'click to copy')} bottom {color}>
+      <Icon path={mdiDiscord} {color}/>
     </SvelteTooltip>
   </span>
 </main>
