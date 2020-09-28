@@ -18,31 +18,45 @@ function resetTip () {
 }
 
 const color = '#d996f6'
-const ogtip = `<strong>nicholai#1312</strong> <br />
+const tag = tag => (content = '') => `<${tag}>${content}</${tag}>`
+const strong = tag('strong')
+const i = tag('i')
+const ogtip = `${strong('nicholai#1312')}<br />
 <i>click to copy</i>`
-let tip = ogtip
+
+const tip = (title, subtitle) => `${strong(title)}<br />${i(subtitle)}`
 </script>
 
 
 <main>
 	<h1>nicholai nissen.</h1>
-  <span class="m">
-    <a href="https://github.com/nicholaiii">
-      <Icon path={mdiGithub} color={color}/>
-    </a>
+
+  <span class="wrapper m">
+    <SvelteTooltip tip="{tip('@nicholaiii', 'github')}" bottom color={color}>
+      <a href="https://github.com/nicholaiii" target="_blank">
+        <Icon path={mdiGithub} color={color}/>
+      </a>
+    </SvelteTooltip>
   </span>
-  <span class="m">
-    <a href="http://gitlab.com/nicholainissen">
-      <Icon path={mdiGitlab} color={color}/>
-    </a>
+
+  <span class="wrapper m">
+    <SvelteTooltip tip="{tip('@nicholainissen', 'gitlab')}" bottom color={color}>
+      <a href="http://gitlab.com/nicholainissen" target="_blank">
+        <Icon path={mdiGitlab} color={color} />
+      </a>
+    </SvelteTooltip>
   </span>
-  <span class="m">
-    <a href="https://twitter.com/nicholainissen">
-      <Icon path={mdiTwitter} color={color}/>
-    </a>
+
+  <span class="wrapper m">
+    <SvelteTooltip tip="{tip('@nicholainissen', 'twitter')}" bottom color={color}>
+      <a href="https://twitter.com/nicholainissen" target="_blank">
+        <Icon path={mdiTwitter} color={color}/>
+      </a>
+    </SvelteTooltip>
   </span>
+
   <span class="wrapper m" on:mouseout={resetTip} on:click={copyDiscordLink}>
-    <SvelteTooltip tip={tip} bottom color="#d996f6">
+    <SvelteTooltip tip={tip('nicholai#1312', 'click to copy')} bottom color={color}>
       <Icon path={mdiDiscord} color={color}/>
     </SvelteTooltip>
   </span>
@@ -78,5 +92,9 @@ h1 {
 	main {
 		max-width: none;
 	}
+}
+
+main {
+  user-select: none;
 }
 </style>
