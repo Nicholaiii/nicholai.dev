@@ -8,13 +8,15 @@ import {
 	mdiDiscord
 } from '@mdi/js'
 
+let discordLinkCopied = false
+
 function copyDiscordLink () {
   navigator.clipboard.writeText('nicholai#1312')
-  tip = "Copied!"
+  discordLinkCopied = true
 }
 
 function resetTip () {
-  setTimeout(()=>tip = ogtip, 200)
+  setTimeout(() => discordLinkCopied = false,200)
 }
 
 const color = '#d996f6'
@@ -55,7 +57,7 @@ const tip = (title, subtitle) => `${strong(title)}<br />${i(subtitle)}`
   </span>
 
   <span class="wrapper m" on:mouseout={resetTip} on:click={copyDiscordLink}>
-    <SvelteTooltip tip={tip('nicholai#1312', 'click to copy')} bottom {color}>
+    <SvelteTooltip tip={discordLinkCopied ? tip('Copied!') : tip('nicholai#1312', 'click to copy')} bottom {color}>
       <Icon path={mdiDiscord} {color}/>
     </SvelteTooltip>
   </span>
