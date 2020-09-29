@@ -1,6 +1,6 @@
 <script>
 import SvelteTooltip from './SvelteTooltip.svelte'
-import Icon from './Icon.svelte'
+import Icon from 'mdi-svelte'
 import {
 	mdiGithub,
 	mdiTwitter,

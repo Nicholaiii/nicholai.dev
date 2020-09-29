@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@mdi/js": "^5.0.45",
+    "mdi-svelte": "^1.1.2",
     "sirv-cli": "^0.4.4"
   }
 }
