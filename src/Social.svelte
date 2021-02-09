@@ -47,6 +47,6 @@ $: tip = tips[2] && clicked ? makeTip(tips[2]) : makeTip(tips[0], tips[1])
 }
 
 .wrapper {
-  color: #efdeff;
+  color: #EFBDBF;
 }
 </style>

@@ -39,7 +39,7 @@ const socialButtons = [
   }
 ]
 
-const color = '#d996f6'
+const color = '#b5838d'
 </script>
 
 
@@ -65,7 +65,7 @@ main {
 }
 
 h1 {
-	color: #8D67D5;
+	color: #e5989b;
 	font-size: 4em;
 	font-weight: 100;
 	font-family: 'Cutive Mono', monospace;
