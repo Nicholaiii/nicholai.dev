@@ -14,12 +14,12 @@ jobs:
       - run: npm i --global @staticdeploy/cli
       - run: npm run build
       - name: Publish bundle to staticdeploy
-        run: staticdeploy bundle --from ./public --name nicholai.dev --tag $GITHUB_REF --description "Build of commit $GITHUB_SHA"
+        run: staticdeploy bundle --from ./public --name nicholai.dev --tag $GITHUB_SHA --description "Build of commit $GITHUB_SHA"
         env:
           STATICDEPLOY_API_URL: ${{ secrets.STATICDEPLOY_API_URL }}
           STATICDEPLOY_API_TOKEN: ${{ secrets.STATICDEPLOY_API_TOKEN }}
       - name: Deploy to staticdeploy
-        run: staticdeploy deploy --app nicholai.dev --entrypoint dev.nicholai.dev/$GITHUB_REF --bundle nicholai.dev:$GITHUB_REF
+        run: staticdeploy deploy --app nicholai.dev --entrypoint dev.nicholai.dev/$GITHUB_SHA --bundle nicholai.dev:$GITHUB_SHA
         env:
           STATICDEPLOY_API_URL: ${{ secrets.STATICDEPLOY_API_URL }}
           STATICDEPLOY_API_TOKEN: ${{ secrets.STATICDEPLOY_API_TOKEN }}
