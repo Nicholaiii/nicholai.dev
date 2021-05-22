@@ -1,21 +1,16 @@
 <script>
-import Icon from 'mdi-svelte'
 import {
   mdiGithub,
 	mdiTwitter,
 	mdiGitlab,
 	mdiDiscord
 } from '@mdi/js'
-import SvelteTooltip from './SvelteTooltip.svelte'
-import Social from './Social.svelte'
 
-let discordLinkCopied = false
+import Social from './Social.svelte'
 
 function copyDiscordLink () {
   navigator.clipboard.writeText('nicholai#1312')
-  discordLinkCopied = true
 }
-let tip = () => ''
 
 const socialButtons = [
   {
