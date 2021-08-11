@@ -12,9 +12,11 @@ export let href = null
 export let tips = ['', '', null]
 
 let clicked = false
+
 function resetTip () {
   setTimeout(() => clicked = false, 200)
 }
+
 function onClick () {
   clicked = true
   dispatch('click')
