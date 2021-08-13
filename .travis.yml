@@ -16,14 +16,3 @@ before_script:
 
 script:
   - docker build -t "$IMAGE_NAME" .
-
-before_deploy:
-  - echo "$DOCKER_PASSWORD" | docker login docker.pkg.github.com -u "$DOCKER_USERNAME" --password-stdin
-  - docker tag "$IMAGE_NAME" "${REGISTRY_URL}:latest"
-  - docker tag "$IMAGE_NAME" "${REGISTRY_URL}:${version}"
-
-deploy:
-  provider: script
-  script: docker push "${REGISTRY_URL}:latest" && docker push "${REGISTRY_URL}:${version}"
-  on:
-    branch: master
