@@ -1,7 +1,6 @@
 # nicholai.dev
 
-This is my personal website. 
-
+This is my personal website.
 
 ## Get started
 

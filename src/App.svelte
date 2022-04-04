@@ -1,4 +1,5 @@
 <script>
+import "@fontsource/cutive-mono"
 import {
   mdiGithub,
 	mdiTwitter,
@@ -50,7 +51,6 @@ const color = '#b5838d'
 </main>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
 
 main {
 	text-align: center;

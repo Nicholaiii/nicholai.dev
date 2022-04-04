@@ -1,16 +1,16 @@
 # Build stage
-FROM node:13.12-alpine as build-stage
+FROM node:lts-alpine as build-stage
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 COPY . .
 ENV NODE_ENV=production
 RUN npm run build
 
 # Production stage
-FROM abiosoft/caddy:no-stats as production-stage
+FROM caddy as production-stage
 COPY --from=build-stage /app/public /srv
-COPY Caddyfile /etc
+COPY Caddyfile /etc/caddy
 ENV ACME_AGREE="true"
 EXPOSE 80 443
 
