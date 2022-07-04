@@ -48,6 +48,7 @@ const color = '#b5838d'
       <Social {color} {...social} />
     {/if}
   {/each}
+  <a class="masto-link" rel="me" href="https://mastodon.social/@nicholai">Mastodon</a>
 </main>
 
 <style>
@@ -75,4 +76,6 @@ h1 {
 main {
   user-select: none;
 }
+
+a.masto-link { display:none; }
 </style>
