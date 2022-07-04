@@ -1,10 +1,10 @@
 <script>
-import "@fontsource/cutive-mono"
+import '@fontsource/cutive-mono'
 import {
   mdiGithub,
 	mdiTwitter,
-	mdiGitlab,
-	mdiDiscord
+	mdiDiscord,
+  mdiMastodon
 } from '@mdi/js'
 
 import Social from './Social.svelte'
@@ -15,19 +15,19 @@ function copyDiscordLink () {
 
 const socialButtons = [
   {
-    title: "GitHub",
+    title: 'GitHub',
     path: mdiGithub,
-    href: "https://github.com/nicholaiii",
+    href: 'https://github.com/nicholaiii',
     tips: ['@nicholaiii', 'github']
   }, {
-    title: "GitLab",
-    path: mdiGitlab,
-    href: "http://gitlab.com/nicholainissen",
-    tips: ['@nicholainissen', 'gitlab']
+    title: 'Mastodon ',
+    path: mdiMastodon,
+    href: 'https://mastodon.social/@nicholai',
+    tips: ['@nicholai', 'mastodon']
   }, {
-    title: "Twitter",
+    title: 'Twitter',
     path: mdiTwitter,
-    href: "https://twitter.com/nicholainissen",
+    href: 'https://twitter.com/nicholainissen',
     tips: ['@nicholainissen', 'twitter']
   }, {
     tips: ['nicholai#1312', 'click to copy', 'Copied!'],
