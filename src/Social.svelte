@@ -33,7 +33,7 @@ $: tip = tips[2] && clicked ? makeTip(tips[2]) : makeTip(tips[0], tips[1])
 <span class="wrapper m" on:mouseout={resetTip} on:blur={resetTip} on:click={onClick}>
   <SvelteTooltip {tip} bottom {color}>
   {#if href}
-    <a {href} target="_blank" rel="me">
+    <a rel="me noopener" {href} target="_blank">
      <Icon {title} {path} {color}/> 
     </a>
   {:else}
