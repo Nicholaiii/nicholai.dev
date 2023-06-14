@@ -10,7 +10,7 @@ import {
 import Social from './Social.svelte'
 
 function copyDiscordLink () {
-  navigator.clipboard.writeText('nicholai#1312')
+  navigator.clipboard.writeText('nicholai')
 }
 
 const socialButtons = [
