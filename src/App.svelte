@@ -30,7 +30,7 @@ const socialButtons = [
     href: 'https://twitter.com/nicholainissen',
     tips: ['@nicholainissen', 'twitter']
   }, {
-    tips: ['nicholai#1312', 'click to copy', 'Copied!'],
+    tips: ['nicholai', 'click to copy', 'Copied!'],
     path: mdiDiscord
   }
 ]
@@ -49,6 +49,7 @@ const color = '#b5838d'
     {/if}
   {/each}
   <a class="masto-link" rel="me" href="https://mastodon.social/@nicholai">Mastodon</a>
+  <a class="masto-link" rel="me" href="https://tech.lgbt/@nicholai">Mastodon</a>
 </main>
 
 <style>
