@@ -1,9 +1,11 @@
 {
-	"name": "nicholai-dev-modernised",
-	"version": "0.0.1",
+	"name": "nicholai-dev",
+  "prepare": "svelte-kit sync",
+	"version": "2.0.0",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
+		"prepare": "svelte-kit sync",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
