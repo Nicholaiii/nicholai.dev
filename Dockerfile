@@ -16,3 +16,4 @@ ENV ACME_AGREE="true"
 EXPOSE 80 443
 
 LABEL authors="Nicholai Nissen"
+LABEL org.opencontainers.image.source="https://github.com/nicholaiii/nicholai.dev"
