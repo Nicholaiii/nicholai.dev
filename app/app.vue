@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useClipboard } from '@vueuse/core'
-
-const source = ref('nicholai')
-const { text, copy, copied, isSupported } = useClipboard({ source })
-
+/* import { useClipboard } from '@vueuse/core'
+*
+* const source = ref('nicholai')
+* const { text, copy, copied, isSupported } = useClipboard({ source })
+*/
 useHead({
   title: 'nicholai nissen',
   link: [
@@ -27,10 +27,10 @@ useHead({
       </div>
       <div class="col-span-4 md:col-start-5 justify-self-stretch text-center mt-8 gradient-box mx-auto">
         <div class="grid grid-cols-4">
-        <h2 class="col-span-4">find me here:</h2>
+        <h2 class="col-span-4 text-stone-300">find me here:</h2>
         <ul class="col-span-4">
           <li>
-            <UButton icon="i-pixelarticons-mastodon" size="sm" color="stone" variant="link" label="mastodon" to="https://helvede.net/@nicholai" external
+            <UButton icon="i-pixelarticons-mastodon" size="sm" variant="link" label="mastodon" to="https://helvede.net/@nicholai" external
               :trailing="false" />
           </li>
         </ul>
