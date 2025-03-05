@@ -21,9 +21,9 @@ useHead({
 
 <template comments>
   <UContainer class="select-none">
-    <div class="grid grid-cols-4 md:grid-cols-12 mt-8">
+    <div class="grid grid-cols-4 md:grid-cols-12 mt-8 h-card">
       <div class="col-span-4 md:col-start-5 justify-self-stretch text-center text-stone-200">
-        <a class="text-4xl h-card" href="https://nicholai.dev/">nicholai nissen.</a>
+        <a class="text-4xl p-name p-org u-url" href="https://nicholai.dev/">nicholai nissen.</a>
       </div>
       <div class="p-note col-span-4 md:col-start-5 justify-self-stretch text-center text-stone-300">hi there, welcome to my website!</div>
       <div class="col-span-4 md:col-start-5 justify-self-stretch text-center mt-8 gradient-box mx-auto">
