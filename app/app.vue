@@ -1,9 +1,9 @@
 <script setup lang="ts">
-/* import { useClipboard } from '@vueuse/core'
-*
-* const source = ref('nicholai')
-* const { text, copy, copied, isSupported } = useClipboard({ source })
-*/
+import { useClipboard } from '@vueuse/core'
+const source = ref('nicholai')
+const { text, copy, copied, isSupported } = useClipboard({ source })
+const discordLabel = computed(() => copied.value ? 'copied to clipboard!' : 'discord')
+
 useHead({
   title: 'nicholai nissen',
   link: [
@@ -19,25 +19,29 @@ useHead({
 })
 </script>
 
-<template>
+<template comments>
   <UContainer class="select-none">
     <div class="grid grid-cols-4 md:grid-cols-12 mt-8">
-      <div class="col-span-4 md:col-start-5 justify-self-stretch text-center">
+      <div class="col-span-4 md:col-start-5 justify-self-stretch text-center text-stone-200">
         <a class="text-4xl h-card" href="https://nicholai.dev/">nicholai nissen.</a>
       </div>
+      <div class="p-note col-span-4 md:col-start-5 justify-self-stretch text-center text-stone-300">hi there, welcome to my website!</div>
       <div class="col-span-4 md:col-start-5 justify-self-stretch text-center mt-8 gradient-box mx-auto">
-        <div class="grid grid-cols-4">
-        <h2 class="col-span-4 text-stone-300">find me here:</h2>
-        <ul class="col-span-4">
-          <li>
-            <UButton icon="i-pixelarticons-mastodon" size="sm" variant="link" label="mastodon" to="https://helvede.net/@nicholai" external
-              :trailing="false" />
-          </li>
-        </ul>
-        </div>
-        
+        <div class="grid grid-cols-4 text-left">
+          <h2 class="col-span-4 text-stone-300">find me here:</h2>
+          <ul class="col-span-4">
+            <li class=" inline-flex">
+              <UButton icon="i-simple-icons-mastodon" size="sm" variant="link" label="mastodon" to="https://helvede.net/@nicholai" prefetch external target="_blank" class="pr-1" />
+              <span class="text-stone-500 font-medium text-sm py-1.5">(helvede.net)</span>
+            </li>
+            <li>
+              <UButton icon="i-simple-icons-discord" size="sm" variant="link" :label="discordLabel" @click="copy()"  />
+            </li>
+          </ul>
+        </div>     
       </div>
     </div>
+    <!-- too cool for majuscule -->
   </UContainer>
 </template>
 
