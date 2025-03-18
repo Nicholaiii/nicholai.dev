@@ -11,6 +11,8 @@ useHead({
     { rel: 'shortcut icon', href: '/favicon.ico' },
     { rel: 'me', href: 'https://helvede.net/@nicholai' },
     { rel: 'me', href: 'https://libre.fm/user/nicholai' },
+    { rel: 'me', href: 'https://friendica.dk/profile/nicholai' },
+    
   ],
   meta: [{ name: 'apple-mobile-web-app-title', content: 'nicholai.dev' }],
   htmlAttrs: {
