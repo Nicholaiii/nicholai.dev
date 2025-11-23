@@ -34,8 +34,12 @@ useHead({
           <ul class="col-span-4">
             <li class=" inline-flex">
               <UButton icon="i-simple-icons-mastodon" size="sm" variant="link" label="mastodon" to="https://helvede.net/@nicholai" prefetch external target="_blank" class="pr-1" />
-              <span class="text-stone-500 font-medium text-sm py-1.5">(helvede.net)</span>
+              <span class="text-stone-500 font-medium text-sm py-1.5">(personal on helvede.net)</span>
             </li>
+            <li class=" inline-flex">
+              <UButton icon="i-simple-icons-mastodon" size="sm" variant="link" label="mastodon" to="https://helvede.net/@nicholai" prefetch external target="_blank" class="pr-1" />
+              <span class="text-stone-500 font-medium text-sm py-1.5">(miniatures on dice.camp)</span>
+            </li>            
             <li>
               <UButton icon="i-simple-icons-discord" size="sm" variant="link" :label="discordLabel" @click="copy()"  />
             </li>
